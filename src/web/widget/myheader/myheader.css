@@ -1,0 +1,7 @@
+:root {
+    --mainColor: skyblue;
+  }
+.myheader{
+    color: orange;
+    background: var(--mainColor);
+}

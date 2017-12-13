@@ -1,0 +1,15 @@
+{% extends './layout.html' %}
+
+{% block title %} index {% endblock %}
+
+{% block head %} {{css}} {% endblock %}
+
+{% block content %}
+    {% include "../widget/myheader.html" %}
+    <div>
+            <h1>{{data}}</h1>
+     <div>
+    {% include "../widget/myfooter.html" %}
+
+    {{js}}
+{% endblock %}
