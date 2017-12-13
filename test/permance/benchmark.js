@@ -1,3 +1,4 @@
+//测试代码执行效率
 const Benchmark = require('benchmark');
 const suite = new Benchmark.Suite;
 
