@@ -1,7 +1,7 @@
-require('./myfooter.css')
+require('./myfooter.css');
 class Myfooter{
     init(){
-        console.log('init myfooter');
+        console.warn('init myfooter');
     }
 }
 

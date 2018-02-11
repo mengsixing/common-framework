@@ -1,9 +1,9 @@
 class IndexModel {
-    getIndexInfo(){
-        return new Promise((resolve,reject)=>{
-            setTimeout(function(){
-                resolve( '这是首页信息。zz');
-            },1000)
+    getIndexInfo() {
+        return new Promise((resolve) => {
+            setTimeout(function () {
+                resolve('这是首页信息。zz');
+            }, 1000);
         });
     }
 }

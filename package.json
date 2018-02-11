@@ -7,7 +7,8 @@
     "test": "mocha test/service/index.spec.js --reporter mochawesome --reporter-options reportDir=docs/mocha-reporter",
     "build": "cross-env NODE_ENV=production webpack && gulp",
     "dev": "cross-env NODE_ENV=dev webpack && gulp && node ./config/dev-server.js",
-    "backstop": "backstop test"
+    "backstop": "backstop test",
+    "lint":"./node_modules/.bin/eslint ./src/*"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "eslint": "^4.17.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",

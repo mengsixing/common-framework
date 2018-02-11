@@ -1,12 +1,12 @@
-import Koa from 'koa'
-import router from 'koa-simple-router'
-import config from './config/config.js'
-import errorHander from './middlewares/errorHander.js'
-import initController from './controller/initController.js'
-import log4js from 'log4js'
-import render from 'koa-swig'
-import co from 'co'
-import serve from 'koa-static'
+import Koa from 'koa';
+import router from 'koa-simple-router';
+import config from './config/config.js';
+import errorHander from './middlewares/errorHander.js';
+import initController from './controller/initController.js';
+import log4js from 'log4js';
+import render from 'koa-swig';
+import co from 'co';
+import serve from 'koa-static';
 
 let app = new Koa();
 //配置静态资源路径

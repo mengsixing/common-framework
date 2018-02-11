@@ -1,4 +1,4 @@
-import indexModel from '../models/indexModel.js'
+import indexModel from '../models/indexModel.js';
 
 class indexController{
     getIndexInfo(){

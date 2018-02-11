@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'path';
 const devConfig = {
 	port: 3000,
 	"viewDir":path.join(__dirname, '..', 'views'),

@@ -1,5 +1,5 @@
-import devconfig from './local'
-import prodconfig from './server'
+import devconfig from './local';
+import prodconfig from './server';
 
 //这里是公共配置
 let config={};

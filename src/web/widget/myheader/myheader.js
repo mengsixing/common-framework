@@ -1,4 +1,4 @@
-require('./myheader.css')
+require('./myheader.css');
 require('./myheader2.css');
 class Myheader{
     init(){
