@@ -9,6 +9,31 @@ const viewsPath = path.join(__dirname, '../src/web/views/');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+var fs = require("fs");
+
+//把web widget下的所有html打包到widget
+const widgetDir = path.join(__dirname, '../src/web/widget');
+var widgetPages=[];
+fs.readdirSync(widgetDir).map((filename) => {
+  const _fd = widgetDir + "/" + filename;
+  var viewUrl='src/web/widget' + "/" + filename;
+	fs.readdirSync(_fd).map((innnero) => {
+		if (/.html$/.test(innnero)) {
+      widgetPages.push({
+        filename:innnero,
+        path:viewUrl+'/'+innnero
+      });
+		}
+	})
+});
+
+var widgetHtmls= widgetPages.map((item)=>{
+  return new HtmlWebpackPlugin({
+    filename: '../widget/'+item.filename,
+    template:item.path,
+    inject:false
+  })
+})
 
 
 
@@ -50,19 +75,6 @@ var devConfig = {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    //js hint
-    // new webpack.optimize.UglifyJsPlugin({
-    //   beautify: false,
-    //   //true
-    //   comments: false,
-    //   compress: {
-    //     warnings: false,
-    //     //baidu 万万不能要
-    //     drop_console: true,
-    //     collapse_vars: true,
-    //     reduce_vars: true
-    //   }
-    // }),
     new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       template: viewsPath + 'index/pages/index.html',
@@ -79,16 +91,7 @@ var devConfig = {
       template: viewsPath + 'common/pages/layout.html',
       inject: false
     }),
-    new HtmlWebpackPlugin({
-      filename: '../widget/myheader.html',
-      template: 'src/web/widget/myheader/myheader.html',
-      inject: false
-    }),
-    new HtmlWebpackPlugin({
-      filename: '../widget/myfooter.html',
-      template: 'src/web/widget/myfooter/myfooter.html',
-      inject: false
-    }),
+    ...widgetHtmls,
 
     new CleanWebpackPlugin(pathsToClean, cleanOptions),
     new webpack.DefinePlugin({
