@@ -1,4 +1,7 @@
 # common-framework
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/yhlben/common-framework.svg)](https://greenkeeper.io/)
+
 koa+swig搭建的通用前端框架。
 
 
